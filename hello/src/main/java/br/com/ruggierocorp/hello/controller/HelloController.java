@@ -1,0 +1,40 @@
+package br.com.ruggierocorp.hello.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+/*
+ * Quando anotamos a classe com @RestController, significa que esta classe irá atender requisições através de URLs
+ * 
+ * para cada método uma nova URL
+ * 
+ * o métod mais "simples" para isso é o método GET
+ * 
+ */
+
+@RestController
+public class HelloController {
+
+	/*
+	 * A anotação @GetMapping informa que o método "sayHello()" irá responder na URL que é formada da seguinte maneira:
+	 * 
+	 * http://servidor:porta/helloworld
+	 * 
+	 * servidor = localhost
+	 * porta =8080
+	 */
+
+	@GetMapping("/helloworld")
+	//	@GetMapping("/goodbyeworld")
+
+	public String sayHello() {
+		return "Hello World!!! Meu primeiro exemplo SpringBoot";
+	}	
+
+	@GetMapping("/goodbyeworld")
+	public String sayGoodbye() {
+		return "outro método retornando outra coisa";
+	}
+
+
+}

@@ -1,0 +1,24 @@
+package br.com.turma11corp.ecommerce.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+public class Teste {
+
+
+	@RestController
+	public class HelloController {
+
+		//@GetMapping("/boasvindas")
+		@GetMapping("/boasvindas")
+
+	
+
+	public String sayHello() {
+		return "Bem vindo ao meu Ecommerce";
+
+	}	
+	}
+	
+
+}

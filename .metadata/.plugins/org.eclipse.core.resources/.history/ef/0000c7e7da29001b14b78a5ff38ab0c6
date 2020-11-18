@@ -1,0 +1,28 @@
+package br.com.turma11corp.ecommerce.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.turma11corp.ecommerce.model.Produto;
+
+@RestController
+
+public class ProdutoController {
+
+
+	@GetMapping("/produto")
+	public Produto exibirProduto() {
+		Produto prod;
+		prod = new Produto();
+		prod.setId(9876);;
+		prod.setNome("Notebook Gamer");
+		prod.setDetalhes("Notebook caro pq o teclado acende luzinha de led");
+		prod.setPreco(5000.0);
+		prod.setQtdEstoque(10);
+		return prod;
+
+
+	}
+
+
+}

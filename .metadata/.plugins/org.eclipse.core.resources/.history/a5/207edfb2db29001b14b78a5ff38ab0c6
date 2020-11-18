@@ -1,0 +1,51 @@
+package br.com.turma11corp.ecommerce.controller;
+
+import java.util.ArrayList;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import br.com.turma11corp.ecommerce.model.Produto;
+
+@RestController
+
+public class ProdutoController {
+	
+		
+	
+
+	@GetMapping("/produto")
+	public Produto exibirProduto() {
+		Produto prod;
+		prod = new Produto();
+		prod.setId(9876);;
+		prod.setNome("Notebook Gamer");
+		prod.setDetalhes("Notebook caro pq o teclado acende luzinha de led");
+		prod.setPreco(5000.0);
+		prod.setQtdEstoque(10);
+		return prod;
+	}
+
+	
+	@GetMapping("/produto/todos")
+	public ArrayList<Produto> getAllProdutos(){
+		ArrayList<Produto> lista;
+	lista = new ArrayList<Produto>();
+
+	lista.add(new Produto1("Produto1", 9877, "Note1", "NOte para função A", 5000, 50));
+	lista.add(new Produto1("Produto2", 9878, "Note2", "NOte para função A", 6000, 40));
+	lista.add(new Produto1("Produto3", 9879, "Note3", "NOte para função A", 7000, 30));
+	lista.add(new Produto1("Produto4", 9880, "Note4", "NOte para função A", 8000, 20));
+	lista.add(new Produto1("Produto5", 9881, "Note5", "NOte para função A", 9000, 10));
+	}
+	// como eu faço para "rodar" a folha e mostrar 1 recibo por linha?
+
+	for (int pos = 0; pos < lista.size(); pos++) {
+		Produto f = lista.get(pos);
+		System.out.printf("%d  %-30s  %d R$ ", f.getNumRegistro(), f.getNome(), f.calcularSalario());
+	}
+
+	
+
+
+}

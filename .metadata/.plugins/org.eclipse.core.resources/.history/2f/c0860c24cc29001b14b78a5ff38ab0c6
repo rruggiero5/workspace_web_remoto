@@ -1,0 +1,12 @@
+package br.com.ruggierocorp.hello.controller;
+
+public class HelloController {
+
+	
+	
+	public String sayHello() {
+		return "Hello World!!! Meu primeiro exemplo SpringBoot";
+			
+	}	
+	
+}
